@@ -39,7 +39,15 @@ class SubtitleTrack
     track
   end
 
+  def format_default
+    if @default === "YES"
+      @default.yellow 
+    else 
+      @default
+    end
+  end
+
   def log
-    puts "SubtitleTrack : [ group-id:#{@group_id.light_blue} language=#{@language.red} name=#{@name.red} default=#{@default} ]"
+    puts "SubtitleTrack : [ group-id:#{@group_id.light_blue} language=#{@language.red} name=#{@name.red} default=#{format_default}"
   end
 end

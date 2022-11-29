@@ -50,7 +50,15 @@ class AudioTrack
     track
   end
 
+  def format_default
+    if @default == "YES"
+      @default.yellow 
+    else 
+      @default
+    end
+  end
+
   def log
-    puts "AudioTrack : [ group-id:#{@group_id.yellow} language=#{@language.red} name=#{@name.red} default=#{@default} autoselect=#{@autoselect} ]"
+    puts "AudioTrack : [ group-id:#{@group_id.yellow} language=#{@language.red} name=#{@name.red} default=#{format_default} autoselect=#{@autoselect}"
   end
 end
